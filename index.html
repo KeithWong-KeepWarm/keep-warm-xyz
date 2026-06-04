@@ -1,34 +1,215 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Keep Warm Software — Portfolio</title>        <!-- Clean, High-Legibility Nordic Typography -->    <link rel="preconnect" href="https://fonts.googleapis.com">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>        /* --- NORDIC DESIGN SYSTEM VARIABLES --- */        :root {            --bg-stone: #1E222B;       /* Low-stimulus dark canvas background */            --panel-charcoal: #252A34; /* Soft structural card backgrounds */            --text-snow: #E2E8F0;      /* Glare-free light reading text */            --text-mist: #8A94A6;      /* Subdued grey for metadata and secondary rows */            --hearth-glow: #FFB74D;    /* Amber candlelight accent */            --border-subtle: rgba(138, 148, 166, 0.08);        }
-        * {            box-sizing: border-box;            margin: 0;            padding: 0;        }
-        body {            background-color: var(--bg-stone);            color: var(--text-snow);            font-family: 'Inter', sans-serif;            font-weight: 300;            line-height: 1.7;            letter-spacing: 0.02em;            padding: 4rem 2rem;            display: flex;            justify-content: center;        }
-        /* Ambient glowing background accent */        .ambient-fire {            position: absolute;            top: 0;            left: 50%;            transform: translateX(-50%);            width: 800px;            height: 500px;            background: radial-gradient(circle, rgba(255, 183, 77, 0.02) 0%, rgba(30, 34, 43, 0) 70%);            z-index: 1;            pointer-events: none;        }
-        /* Central Layout Content Framework */        .viewport-container {            width: 100%;            max-width: 960px;            position: relative;            z-index: 2;        }
-        /* --- HEADER ARCHITECTURE --- */        header {            margin-bottom: 5rem;            text-align: left;        }
-        .brand-block {            display: flex;            align-items: center;            gap: 1rem;            margin-bottom: 0.5rem;        }
-        .brand-title {            font-size: 1.5rem;            font-weight: 400;            letter-spacing: 0.2em;            text-transform: uppercase;        }
-        .brand-tagline {            font-size: 0.85rem;            color: var(--text-mist);            letter-spacing: 0.1em;        }
-        /* --- TWIN-TRACK PORTFOLIO GRID --- */        .portfolio-grid {            display: grid;            grid-template-columns: 1fr 1fr;            gap: 2.5rem;        }
-        @media (max-width: 768px) {            .portfolio-grid {                grid-template-columns: 1fr;            }        }
-        /* Tactical Card Module */        .nordic-card {            background-color: var(--panel-charcoal);            border: 1px solid var(--border-subtle);            border-radius: 12px;            padding: 3rem 2.5rem;            display: flex;            flex-direction: column;            justify-content: space-between;            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);            transition: transform 0.4s ease, border-color 0.4s ease;        }
-        .nordic-card:hover {            transform: translateY(-4px);            border-color: rgba(255, 183, 77, 0.15);        }
-        .card-category {            font-size: 0.7rem;            text-transform: uppercase;            letter-spacing: 0.25em;            color: var(--hearth-glow);            margin-bottom: 1rem;            font-weight: 500;        }
-        .card-title {            font-size: 1.25rem;            font-weight: 400;            letter-spacing: 0.05em;            margin-bottom: 1.5rem;            color: var(--text-snow);        }
-        /* Structured Internal Phase Timeline Lists */        .phase-list {            list-style: none;            margin-bottom: 2.5rem;        }
-        .phase-item {            margin-bottom: 1rem;            font-size: 0.9rem;            color: var(--text-mist);            padding-left: 1.5rem;            position: relative;        }
-        /* Minimalist structural dot indicators instead of heavy icons */        .phase-item::before {            content: "";            position: absolute;            left: 0;            top: 0.6rem;            width: 5px;            height: 5px;            border-radius: 50%;            background-color: rgba(226, 232, 240, 0.3);        }
-        .phase-item strong {            color: var(--text-snow);            font-weight: 400;        }
-        /* Quiet Interactive Link Layout */        .card-link {            font-size: 0.8rem;            text-transform: uppercase;            letter-spacing: 0.15em;            color: var(--text-snow);            text-decoration: none;            display: inline-flex;            align-items: center;            gap: 0.5rem;            transition: color 0.3s ease;        }
-        .card-link:hover {            color: var(--hearth-glow);        }
-        .card-link span {            transition: transform 0.3s ease;        }
-        .card-link:hover span {            transform: translateX(4px);        }
-        /* --- SHARED KERNEL DEV NOTE ELEMENT --- */        .shared-kernel-notice {            margin-top: 4rem;            text-align: center;            font-size: 0.8rem;            color: var(--text-mist);            border-top: 1px solid rgba(138, 148, 166, 0.1);            padding-top: 2rem;            letter-spacing: 0.05em;        }    </style></head><body>
-    <div class="ambient-fire"></div>
-    <div class="viewport-container">                <!-- Site Frame Top Navigation Header -->        <header>            <div class="brand-block">                <h1 class="brand-title">Keep Warm</h1>            </div>            <p class="brand-tagline">Software / Active Repositories</p>        </header>
-        <!-- Dynamic Two-Track Main Interface Block -->        <main class="portfolio-grid">
-            <!-- TRACK 1: THE RESEARCH ENVIRONMENT -->            <section class="nordic-card">                <div>                    <div class="card-category">R&D / Systems Simulation</div>                    <h2 class="card-title">The Heuristic Project</h2>                                        <ul class="phase-list">                        <li class="phase-item">                            <strong>Phase 1: Viking Heuristic</strong><br>                            Decentralized, survivalist routing loops designed for high environmental volatility.                        </li>                        <li class="phase-item">                            <strong>Phase 2: Systemic Stress Testing</strong><br>                            Subjecting routing topologies to simulated macro bottlenecks and black-swan infrastructure closures.                        </li>                        <li class="phase-item">                            <strong>Phase 4: Agentic Mitigation</strong><br>                            Deploying autonomous code agents to self-organize and resolve localized structural blockages in real-time.                        </li>                    </ul>                </div>                <a href="#view-research" class="card-link">Explore Laboratory Logs <span>→</span></a>            </section>
-            <!-- TRACK 2: THE DIGITAL WORLD GAME -->            <section class="nordic-card">                <div>                    <div class="card-category">Application / Virtual World</div>                    <h2 class="card-title">Project: Furious Mole</h2>                                        <ul class="phase-list">                        <li class="phase-item">                            <strong>LSL Telemetry Engine</strong><br>                            Custom Linden Scripting Language modules mapping real-time object positions.                        </li>                        <li class="phase-item">                            <strong>Cargo Hunting Subsystems</strong><br>                            Algorithmic currency mechanics tracking coordinate values across spatial nodes.                        </li>                        <li class="phase-item">                            <strong>Azure Storage Infrastructure</strong><br>                            High-efficiency cloud pipelines to maintain cross-server inventory consistency without lag.                        </li>                    </ul>                </div>                <a href="#view-game" class="card-link">View Technical Manifest <span>→</span></a>            </section>
-        </main>
-        <!-- Shared Core Logic Footnote -->        <footer class="shared-kernel-notice">            Shared Core Architecture: Both environments share an isolated, low-overhead utility library for state transition processing.        </footer>
-    </div>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep Warm Software — Sanctuary</title>
+    
+    <!-- Google Fonts for Clean Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- HYGGE CSS DESIGN FRAMEWORK --- */
+        :root {
+            --bg-slate: #1E222B;       /* Grounding, low-stimulus canvas background */
+            --panel-slate: #252A34;    /* Structural card element background */
+            --text-pure: #E2E8F0;      /* Soft, glare-free white text */
+            --text-muted: #8A94A6;     /* Quiet grey for secondary data elements */
+            --amber-glow: #FFB74D;     /* Candlelight highlight used sparingly */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-slate);
+            color: var(--text-pure);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Ambient subtle gradient to break up flat digital surfaces */
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 183, 77, 0.03) 0%, rgba(30, 34, 43, 0) 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Main Container Node */
+        .sanctuary-node {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 460px;
+            text-align: center;
+            background-color: var(--panel-slate);
+            padding: 3.5rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(138, 148, 166, 0.08);
+            transition: border-color 0.6s ease;
+        }
+
+        .sanctuary-node:hover {
+            border-color: rgba(255, 183, 77, 0.15);
+        }
+
+        /* --- THE MINIMAL GEOMETRIC SHIELD LOGO (SVG) --- */
+        .logo-box {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 2.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-shield {
+            fill: none;
+            stroke: var(--text-muted);
+            stroke-width: 2;
+            stroke-linejoin: round;
+            transition: stroke 0.4s ease;
+        }
+
+        .logo-flame {
+            fill: var(--text-pure);
+            transition: fill 0.4s ease, filter 0.4s ease;
+        }
+
+        /* Interaction micro-animation: glowing ember on hover */
+        .sanctuary-node:hover .logo-flame {
+            fill: var(--amber-glow);
+            filter: drop-shadow(0 0 4px rgba(255, 183, 77, 0.4));
+        }
+        
+        .sanctuary-node:hover .logo-shield {
+            stroke: var(--text-pure);
+        }
+
+        /* --- BRAND MONOGRAM MATRICES (K W) --- */
+        .monogram-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .monogram-letter {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 0;
+        }
+
+        /* Header Style featuring subtle Norse character references (ᛘ, ᚠ) */
+        .brand-title {
+            font-size: 1.35rem;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            color: var(--text-pure);
+            text-transform: uppercase;
+            word-spacing: 0.1em;
+        }
+
+        .brand-subtitle {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 0.4rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Dividers & Content Elements */
+        .divider {
+            width: 24px;
+            height: 1px;
+            background-color: rgba(138, 148, 166, 0.2);
+            margin: 0 auto 2rem auto;
+        }
+
+        .manifesto-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            padding: 0 10px;
+        }
+
+        /* Tactile, quiet navigation link */
+        .enter-btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-pure);
+            border: 1px solid rgba(138, 148, 166, 0.3);
+            padding: 0.75rem 2.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .enter-btn:hover {
+            color: var(--bg-slate);
+            background-color: var(--text-pure);
+            border-color: var(--text-pure);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+
+    <div class="sanctuary-node">
+        
+        <!-- Vector Geometric Shield & Flame Logo Matrix -->
+        <div class="logo-box">
+            <svg viewBox="0 0 64 64" width="100%" height="100%">
+                <!-- Geometric Shield Perimeter -->
+                <path class="logo-shield" d="M32,6 C44,6 48,10 48,24 C48,42 32,54 32,54 C32,54 16,42 16,24 C16,10 20,6 32,6 Z" />
+                <!-- Central Minimal Flame Silhouette -->
+                <path class="logo-flame" d="M32,18 C32,18 38,24 38,31 C38,36.5 34.5,41 32,41 C29.5,41 26,36.5 26,31 C26,24 32,18 32,18 Z M32,25 C32,25 29,28 29,32 C29,34.5 30.5,36 32,36 C33.5,36 35,34.5 35,32 C35,28 32,25 32,25 Z" />
+            </svg>
+        </div>
+
+        <!-- Typography Context Frame -->
+        <div class="monogram-wrapper">
+            <span class="monogram-letter">ᛘ</span>
+            <h1 class="brand-title">Keep Warm</h1>
+            <span class="monogram-letter">ᚠ</span>
+        </div>
+        
+        <p class="brand-subtitle">Software</p>
+        
+        <div class="divider"></div>
+        
+        <p class="manifesto-text">
+            Architecting lightweight digital sanctuaries. Local-first infrastructure designed for absolute boundary control, cognitive stillness, and device health.
+        </p>
+        
+        <a href="#enter" class="enter-btn">Enter System</a>
+
+    </div>
+
+</body>
+</html>
