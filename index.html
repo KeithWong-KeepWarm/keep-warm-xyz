@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keep Warm Software — Sanctuary</title>
+    <title>Keep Warm Software — Active Repositories</title>
     
-    <!-- Google Fonts for Clean Typography -->
+    <!-- Clean Google Fonts for High-End Geometric Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* --- HYGGE CSS DESIGN FRAMEWORK --- */
+        /* --- NORDIC DIGITAL SANCTUARY DESIGN SYSTEM --- */
         :root {
-            --bg-slate: #1E222B;       /* Grounding, low-stimulus canvas background */
-            --panel-slate: #252A34;    /* Structural card element background */
-            --text-pure: #E2E8F0;      /* Soft, glare-free white text */
-            --text-muted: #8A94A6;     /* Quiet grey for secondary data elements */
-            --amber-glow: #FFB74D;     /* Candlelight highlight used sparingly */
+            --bg-canvas: #1E222B;      /* Low-stimulus slate dark canvas */
+            --panel-bg: #242832;       /* Soft card charcoal panels */
+            --text-snow: #E2E8F0;      /* Glare-free pure reading headers */
+            --text-mist: #8A94A6;      /* Secondary grey for nested content strings */
+            --hearth-glow: #FFB74D;    /* Decorative candle amber accents */
+            --border-card: rgba(255, 183, 77, 0.12);
+            --border-inactive: rgba(138, 148, 166, 0.08);
         }
 
         * {
@@ -27,187 +29,347 @@
         }
 
         body {
-            background-color: var(--bg-slate);
-            color: var(--text-pure);
+            background-color: var(--bg-canvas);
+            color: var(--text-snow);
             font-family: 'Inter', sans-serif;
             font-weight: 300;
-            line-height: 1.7;
-            letter-spacing: 0.03em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
             min-height: 100vh;
-            overflow: hidden;
-            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Ambient subtle gradient to break up flat digital surfaces */
-        .ambient-glow {
+        /* --- AMBIENT EYE-STRAIN MITIGATION OVERLAYS --- */
+        /* Top Horizontal Fire Glow Ambient Horizon */
+        .glow-horizon-top {
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 183, 77, 0.03) 0%, rgba(30, 34, 43, 0) 70%);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 180px;
+            background: radial-gradient(ellipse at top, rgba(255, 183, 77, 0.06) 0%, rgba(30, 34, 43, 0) 70%);
             z-index: 1;
             pointer-events: none;
         }
 
-        /* Main Container Node */
-        .sanctuary-node {
+        /* Bottom Horizontal Fire Glow Ambient Horizon */
+        .glow-horizon-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 140px;
+            background: radial-gradient(ellipse at bottom, rgba(255, 183, 77, 0.03) 0%, rgba(30, 34, 43, 0) 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Core Centered Workspace Boundaries Container */
+        .workspace-frame {
+            width: 100%;
+            max-width: 980px;
             position: relative;
             z-index: 2;
-            width: 100%;
-            max-width: 460px;
+            padding: 2rem 0;
+        }
+
+        /* --- LOGO AND CORE HEADERS --- */
+        header {
             text-align: center;
-            background-color: var(--panel-slate);
-            padding: 3.5rem 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(138, 148, 166, 0.08);
-            transition: border-color 0.6s ease;
+            margin-bottom: 3.5rem;
         }
 
-        .sanctuary-node:hover {
-            border-color: rgba(255, 183, 77, 0.15);
-        }
-
-        /* --- THE MINIMAL GEOMETRIC SHIELD LOGO (SVG) --- */
-        .logo-box {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 2.5rem auto;
+        /* Brand Row containing Custom Geometric Shield Vector */
+        .brand-row {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
-        .logo-shield {
-            fill: none;
-            stroke: var(--text-muted);
-            stroke-width: 2;
-            stroke-linejoin: round;
-            transition: stroke 0.4s ease;
-        }
-
-        .logo-flame {
-            fill: var(--text-pure);
-            transition: fill 0.4s ease, filter 0.4s ease;
-        }
-
-        /* Interaction micro-animation: glowing ember on hover */
-        .sanctuary-node:hover .logo-flame {
-            fill: var(--amber-glow);
-            filter: drop-shadow(0 0 4px rgba(255, 183, 77, 0.4));
-        }
-        
-        .sanctuary-node:hover .logo-shield {
-            stroke: var(--text-pure);
-        }
-
-        /* --- BRAND MONOGRAM MATRICES (K W) --- */
-        .monogram-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .monogram-letter {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            font-weight: 300;
-            letter-spacing: 0;
-        }
-
-        /* Header Style featuring subtle Norse character references (ᛘ, ᚠ) */
-        .brand-title {
-            font-size: 1.35rem;
+        .brand-text-block {
+            font-size: 1.4rem;
             font-weight: 400;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--text-snow);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-text-block span {
+            color: var(--text-mist);
+            font-weight: 300;
+        }
+
+        /* Precision SVG Shield with Core Internal Flame Symbol */
+        .shield-logo-vector {
+            width: 36px;
+            height: 40px;
+            fill: none;
+            stroke: var(--hearth-glow);
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .flame-core {
+            fill: var(--hearth-glow);
+            stroke: none;
+        }
+
+        .page-headline {
+            font-size: 1.45rem;
+            font-weight: 300;
+            letter-spacing: 0.06em;
+            color: var(--text-snow);
+            opacity: 0.95;
+        }
+
+        /* --- TWIN-PORTFOLIO ARCHITECTURE LAYOUT GRID --- */
+        .repository-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .repository-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Cohesive Content Board Frame */
+        .repo-card {
+            background-color: var(--panel-bg);
+            border-radius: 10px;
+            padding: 2.5rem 2.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+
+        /* Separate Subtle Border Accent Treatments Based on Project Focus */
+        .card-research {
+            border: 1px solid var(--border-inactive);
+        }
+        .card-research:hover {
+            border-color: rgba(255, 183, 77, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .card-application {
+            border: 1px solid var(--border-card);
+        }
+        .card-application:hover {
+            border-color: rgba(255, 183, 77, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .meta-tag {
+            font-size: 0.68rem;
+            font-weight: 500;
+            text-transform: uppercase;
             letter-spacing: 0.18em;
-            color: var(--text-pure);
-            text-transform: uppercase;
-            word-spacing: 0.1em;
+            color: var(--hearth-glow);
+            margin-bottom: 0.75rem;
+            opacity: 0.85;
         }
 
-        .brand-subtitle {
-            font-size: 0.75rem;
-            letter-spacing: 0.25em;
-            color: var(--text-muted);
+        .card-heading {
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            margin-top: 0.4rem;
             margin-bottom: 2rem;
+            color: var(--text-snow);
         }
 
-        /* Dividers & Content Elements */
-        .divider {
-            width: 24px;
-            height: 1px;
-            background-color: rgba(138, 148, 166, 0.2);
-            margin: 0 auto 2rem auto;
-        }
-
-        .manifesto-text {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        /* --- REPOSITORY TIMELINE LIST MATRICES --- */
+        .list-framework {
+            list-style: none;
             margin-bottom: 2.5rem;
-            padding: 0 10px;
         }
 
-        /* Tactile, quiet navigation link */
-        .enter-btn {
-            display: inline-block;
-            background: transparent;
-            color: var(--text-pure);
-            border: 1px solid rgba(138, 148, 166, 0.3);
-            padding: 0.75rem 2.5rem;
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
+        .list-row {
+            margin-bottom: 1.25rem;
+            padding-left: 1.75rem;
+            position: relative;
+        }
+
+        /* Minimal Geometric Disc Indicators matching design snapshot */
+        .list-row::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.45rem;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--text-mist);
+            opacity: 0.4;
+        }
+
+        .card-application .list-row::before {
+            background-color: var(--hearth-glow);
+            opacity: 0.5;
+        }
+
+        .row-title {
+            font-size: 0.88rem;
+            font-weight: 400;
+            color: var(--text-snow);
+            margin-bottom: 0.15rem;
+            letter-spacing: 0.02em;
+        }
+
+        .row-description {
+            font-size: 0.76rem;
+            color: var(--text-mist);
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+        }
+
+        /* --- CALL TO ACTION ELEMENTS --- */
+        .interaction-anchor {
+            font-size: 0.78rem;
+            font-weight: 400;
             text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--hearth-glow);
             text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.4s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            width: max-content;
+            transition: opacity 0.2s ease;
         }
 
-        .enter-btn:hover {
-            color: var(--bg-slate);
-            background-color: var(--text-pure);
-            border-color: var(--text-pure);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        .interaction-anchor:hover {
+            opacity: 0.8;
+        }
+
+        /* --- CONTROL INFRASTRUCTURE FOOTER --- */
+        .kernel-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.72rem;
+            color: var(--text-mist);
+            letter-spacing: 0.04em;
+            opacity: 0.85;
+            border-top: 1px solid rgba(138, 148, 166, 0.06);
+            padding-top: 1.75rem;
+        }
+
+        .kernel-footer svg {
+            width: 13px;
+            height: 13px;
+            fill: none;
+            stroke: var(--text-mist);
+            stroke-width: 2.2;
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
+    <!-- Ambient Fire Light Horizons -->
+    <div class="glow-horizon-top"></div>
+    <div class="glow-horizon-bottom"></div>
 
-    <div class="sanctuary-node">
+    <div class="workspace-frame">
         
-        <!-- Vector Geometric Shield & Flame Logo Matrix -->
-        <div class="logo-box">
-            <svg viewBox="0 0 64 64" width="100%" height="100%">
-                <!-- Geometric Shield Perimeter -->
-                <path class="logo-shield" d="M32,6 C44,6 48,10 48,24 C48,42 32,54 32,54 C32,54 16,42 16,24 C16,10 20,6 32,6 Z" />
-                <!-- Central Minimal Flame Silhouette -->
-                <path class="logo-flame" d="M32,18 C32,18 38,24 38,31 C38,36.5 34.5,41 32,41 C29.5,41 26,36.5 26,31 C26,24 32,18 32,18 Z M32,25 C32,25 29,28 29,32 C29,34.5 30.5,36 32,36 C33.5,36 35,34.5 35,32 C35,28 32,25 32,25 Z" />
+        <!-- Header Architecture Block -->
+        <header>
+            <div class="brand-row">
+                <div class="brand-text-block">
+                    Keep Warm <span>k</span>
+                    <!-- Precision Scaled Logo Engine -->
+                    <svg class="shield-logo-vector" viewBox="0 0 24 24">
+                        <path d="M12 2L4 5v6c0 5.25 3.42 10.16 8 11 4.58-.84 8-5.75 8-11V5l-8-3z"/>
+                        <path class="flame-core" d="M12 8.5c0 0-2.5 1.5-2.5 4a2.5 2.5 0 0 0 5 0c0-2.5-2.5-4-2.5-4zm0 2.5s-1 .75-1 1.5a1 1 0 0 0 2 0c0-.75-1-1.5-1-1.5z"/>
+                    </svg>
+                    <span>w</span> Software
+                </div>
+            </div>
+            <h1 class="page-headline">Active Repositories</h1>
+        </header>
+
+        <!-- Twin-Track Operational Matrix Grid -->
+        <main class="repository-grid">
+
+            <!-- TRACK ONE: CORE RESEARCH -->
+            <section class="repo-card card-research">
+                <div>
+                    <div class="meta-tag">R&D / Systems Simulation</div>
+                    <h2 class="card-heading">The Heuristic Project</h2>
+                    
+                    <ul class="list-framework">
+                        <li class="list-row">
+                            <div class="row-title">Phase 1: Viking Heuristic</div>
+                            <div class="row-description">Heuristics mapping parameters to alternative routing arrays.</div>
+                        </li>
+                        <li class="list-row">
+                            <div class="row-title">Phase 2: Systemic Stress Testing</div>
+                            <div class="row-description">Subjecting simulated layouts to localized operational network blockages.</div>
+                        </li>
+                        <li class="list-row">
+                            <div class="row-title">Phase 4: Agentic Mitigation</div>
+                            <div class="row-description">Deploying standalone autonomous software blocks to handle load balancing.</div>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#explore-logs" class="interaction-anchor">Explore Laboratory Logs &rarr;</a>
+            </section>
+
+            <!-- TRACK TWO: SIMULATION SOFTWARE -->
+            <section class="repo-card card-application">
+                <div>
+                    <div class="meta-tag">Application / Virtual World</div>
+                    <h2 class="card-heading">Project: Furious Mole</h2>
+                    
+                    <ul class="list-framework">
+                        <li class="list-row">
+                            <div class="row-title">LSL Telemetry Engine</div>
+                            <div class="row-description">Custom scripts linking object vectors to real-time telemetry coordinates.</div>
+                        </li>
+                        <li class="list-row">
+                            <div class="row-title">Cargo Hunting Subsystems</div>
+                            <div class="row-description">Coordinate tracking arrays processing dynamic map node evaluations.</div>
+                        </li>
+                        <li class="list-row">
+                            <div class="row-title">Azure Storage Infrastructure</div>
+                            <div class="row-description">Cloud state synchronization layer providing high data consistency.</div>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#view-manifest" class="interaction-anchor">View Technical Manifest &rarr;</a>
+            </section>
+
+        </main>
+
+        <!-- Low-Stimulus Architectural Ground Footnote -->
+        <footer class="kernel-footer">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
             </svg>
-        </div>
-
-        <!-- Typography Context Frame -->
-        <div class="monogram-wrapper">
-            <span class="monogram-letter">ᛘ</span>
-            <h1 class="brand-title">Keep Warm</h1>
-            <span class="monogram-letter">ᚠ</span>
-        </div>
-        
-        <p class="brand-subtitle">Software</p>
-        
-        <div class="divider"></div>
-        
-        <p class="manifesto-text">
-            Architecting lightweight digital sanctuaries. Local-first infrastructure designed for absolute boundary control, cognitive stillness, and device health.
-        </p>
-        
-        <a href="#enter" class="enter-btn">Enter System</a>
+            Shared Core Architecture: Both environments share an isolated, low-overhead utility library for state transition processing.
+        </footer>
 
     </div>
 
