@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keep Warm Software — Active Repositories</title>
+    <title>Keep Warm Software — Building Digital Sanctuaries</title>
     
-    <!-- Clean Google Fonts for High-End Geometric Typography -->
+    <!-- Clean Geometric Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* --- NORDIC DIGITAL SANCTUARY DESIGN SYSTEM --- */
+        /* --- NORDIC DESIGN SYSTEM VARIABLES --- */
         :root {
-            --bg-canvas: #1E222B;      /* Low-stimulus slate dark canvas */
+            --bg-canvas: #1E222B;      /* Low-stimulus slate dark base */
             --panel-bg: #242832;       /* Soft card charcoal panels */
             --text-snow: #E2E8F0;      /* Glare-free pure reading headers */
-            --text-mist: #8A94A6;      /* Secondary grey for nested content strings */
-            --hearth-glow: #FFB74D;    /* Decorative candle amber accents */
-            --border-card: rgba(255, 183, 77, 0.12);
-            --border-inactive: rgba(138, 148, 166, 0.08);
+            --text-mist: #8A94A6;      /* Secondary grey for paragraph layouts */
+            --hearth-glow: #FFB74D;    /* Amber candlelight accent highlight */
+            --border-glow: rgba(255, 183, 77, 0.15);
+            --border-subtle: rgba(138, 148, 166, 0.08);
         }
 
         * {
@@ -39,60 +39,37 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* --- AMBIENT EYE-STRAIN MITIGATION OVERLAYS --- */
-        /* Top Horizontal Fire Glow Ambient Horizon */
-        .glow-horizon-top {
+        /* Ambient Hearth Glow Top Boundary Overlay */
+        body::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 100vw;
-            height: 180px;
-            background: radial-gradient(ellipse at top, rgba(255, 183, 77, 0.06) 0%, rgba(30, 34, 43, 0) 70%);
+            height: 250px;
+            background: radial-gradient(ellipse at top, rgba(255, 183, 77, 0.05) 0%, rgba(30, 34, 43, 0) 75%);
             z-index: 1;
             pointer-events: none;
         }
 
-        /* Bottom Horizontal Fire Glow Ambient Horizon */
-        .glow-horizon-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
-            height: 140px;
-            background: radial-gradient(ellipse at bottom, rgba(255, 183, 77, 0.03) 0%, rgba(30, 34, 43, 0) 70%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Core Centered Workspace Boundaries Container */
-        .workspace-frame {
+        /* Centralized Container Framework */
+        .workspace-framework {
             width: 100%;
             max-width: 980px;
             position: relative;
             z-index: 2;
-            padding: 2rem 0;
         }
 
-        /* --- LOGO AND CORE HEADERS --- */
+        /* --- HEADER ARCHITECTURE --- */
         header {
             text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        /* Brand Row containing Custom Geometric Shield Vector */
-        .brand-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 4.5rem;
         }
 
         .brand-text-block {
@@ -101,8 +78,9 @@
             letter-spacing: 0.28em;
             text-transform: uppercase;
             color: var(--text-snow);
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.75rem;
         }
 
@@ -111,7 +89,7 @@
             font-weight: 300;
         }
 
-        /* Precision SVG Shield with Core Internal Flame Symbol */
+        /* Precision SVG Shield with Core Flame Symbol */
         .shield-logo-vector {
             width: 36px;
             height: 40px;
@@ -127,249 +105,208 @@
             stroke: none;
         }
 
-        .page-headline {
-            font-size: 1.45rem;
-            font-weight: 300;
-            letter-spacing: 0.06em;
-            color: var(--text-snow);
-            opacity: 0.95;
-        }
-
-        /* --- TWIN-PORTFOLIO ARCHITECTURE LAYOUT GRID --- */
-        .repository-grid {
+        /* --- HERO SPLIT MATRIX LAYOUT --- */
+        .hero-split-matrix {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            margin-bottom: 3.5rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
         }
 
         @media (max-width: 768px) {
-            .repository-grid {
+            .hero-split-matrix {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
         }
 
-        /* Cohesive Content Board Frame */
-        .repo-card {
+        .main-headline {
+            font-size: 2.6rem;
+            font-weight: 300;
+            line-height: 1.25;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-snow);
+        }
+
+        /* Decorative Accent Container Card */
+        .featured-context-card {
             background-color: var(--panel-bg);
-            border-radius: 10px;
-            padding: 2.5rem 2.25rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 2.25rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        /* Separate Subtle Border Accent Treatments Based on Project Focus */
-        .card-research {
-            border: 1px solid var(--border-inactive);
-        }
-        .card-research:hover {
-            border-color: rgba(255, 183, 77, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .card-application {
-            border: 1px solid var(--border-card);
-        }
-        .card-application:hover {
-            border-color: rgba(255, 183, 77, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .meta-tag {
-            font-size: 0.68rem;
+        .context-label {
+            font-size: 0.72rem;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.18em;
             color: var(--hearth-glow);
             margin-bottom: 0.75rem;
-            opacity: 0.85;
         }
 
-        .card-heading {
-            font-size: 1.25rem;
-            font-weight: 400;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            color: var(--text-snow);
-        }
-
-        /* --- REPOSITORY TIMELINE LIST MATRICES --- */
-        .list-framework {
-            list-style: none;
-            margin-bottom: 2.5rem;
-        }
-
-        .list-row {
-            margin-bottom: 1.25rem;
-            padding-left: 1.75rem;
-            position: relative;
-        }
-
-        /* Minimal Geometric Disc Indicators matching design snapshot */
-        .list-row::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.45rem;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: var(--text-mist);
-            opacity: 0.4;
-        }
-
-        .card-application .list-row::before {
-            background-color: var(--hearth-glow);
-            opacity: 0.5;
-        }
-
-        .row-title {
-            font-size: 0.88rem;
-            font-weight: 400;
-            color: var(--text-snow);
-            margin-bottom: 0.15rem;
-            letter-spacing: 0.02em;
-        }
-
-        .row-description {
-            font-size: 0.76rem;
+        .context-text {
+            font-size: 0.82rem;
             color: var(--text-mist);
+            margin-bottom: 1.5rem;
             line-height: 1.5;
-            letter-spacing: 0.01em;
         }
 
-        /* --- CALL TO ACTION ELEMENTS --- */
-        .interaction-anchor {
-            font-size: 0.78rem;
-            font-weight: 400;
+        .btn-action {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--text-snow);
+            border: 1px solid rgba(226, 232, 240, 0.2);
+            padding: 0.5rem 1.25rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: var(--hearth-glow);
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            width: max-content;
-            transition: opacity 0.2s ease;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
 
-        .interaction-anchor:hover {
-            opacity: 0.8;
+        .btn-action:hover {
+            border-color: var(--hearth-glow);
+            color: var(--hearth-glow);
+            background-color: rgba(255, 183, 77, 0.02);
         }
 
-        /* --- CONTROL INFRASTRUCTURE FOOTER --- */
-        .kernel-footer {
+        /* --- TRIPLE FOCUS BOTTOM TILES --- */
+        .focus-row-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .focus-row-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .focus-tile {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 2.25rem 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .focus-tile:hover {
+            transform: translateY(-2px);
+            border-color: rgba(138, 148, 166, 0.15);
+        }
+
+        /* SVG Micro-Icon Custom Architectures */
+        .tile-icon-frame {
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 0.72rem;
-            color: var(--text-mist);
-            letter-spacing: 0.04em;
-            opacity: 0.85;
-            border-top: 1px solid rgba(138, 148, 166, 0.06);
-            padding-top: 1.75rem;
         }
 
-        .kernel-footer svg {
-            width: 13px;
-            height: 13px;
+        .tile-icon {
+            width: 24px;
+            height: 24px;
             fill: none;
-            stroke: var(--text-mist);
-            stroke-width: 2.2;
+            stroke: var(--hearth-glow);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .tile-heading {
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            color: var(--text-snow);
+        }
+
+        .tile-description {
+            font-size: 0.78rem;
+            color: var(--text-mist);
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-    <!-- Ambient Fire Light Horizons -->
-    <div class="glow-horizon-top"></div>
-    <div class="glow-horizon-bottom"></div>
-
-    <div class="workspace-frame">
+    <div class="workspace-framework">
         
-        <!-- Header Architecture Block -->
+        <!-- Header Architecture Frame -->
         <header>
-            <div class="brand-row">
-                <div class="brand-text-block">
-                    Keep Warm <span>k</span>
-                    <!-- Precision Scaled Logo Engine -->
-                    <svg class="shield-logo-vector" viewBox="0 0 24 24">
-                        <path d="M12 2L4 5v6c0 5.25 3.42 10.16 8 11 4.58-.84 8-5.75 8-11V5l-8-3z"/>
-                        <path class="flame-core" d="M12 8.5c0 0-2.5 1.5-2.5 4a2.5 2.5 0 0 0 5 0c0-2.5-2.5-4-2.5-4zm0 2.5s-1 .75-1 1.5a1 1 0 0 0 2 0c0-.75-1-1.5-1-1.5z"/>
-                    </svg>
-                    <span>w</span> Software
-                </div>
+            <div class="brand-text-block">
+                Keep Warm <span>k</span>
+                <svg class="shield-logo-vector" viewBox="0 0 24 24">
+                    <path d="M12 2L4 5v6c0 5.25 3.42 10.16 8 11 4.58-.84 8-5.75 8-11V5l-8-3z"/>
+                    <path class="flame-core" d="M12 8.5c0 0-2.5 1.5-2.5 4a2.5 2.5 0 0 0 5 0c0-2.5-2.5-4-2.5-4zm0 2.5s-1 .75-1 1.5a1 1 0 0 0 2 0c0-.75-1-1.5-1-1.5z"/>
+                </svg>
+                <span>w</span> Software
             </div>
-            <h1 class="page-headline">Active Repositories</h1>
         </header>
 
-        <!-- Twin-Track Operational Matrix Grid -->
-        <main class="repository-grid">
-
-            <!-- TRACK ONE: CORE RESEARCH -->
-            <section class="repo-card card-research">
-                <div>
-                    <div class="meta-tag">R&D / Systems Simulation</div>
-                    <h2 class="card-heading">The Heuristic Project</h2>
-                    
-                    <ul class="list-framework">
-                        <li class="list-row">
-                            <div class="row-title">Phase 1: Viking Heuristic</div>
-                            <div class="row-description">Heuristics mapping parameters to alternative routing arrays.</div>
-                        </li>
-                        <li class="list-row">
-                            <div class="row-title">Phase 2: Systemic Stress Testing</div>
-                            <div class="row-description">Subjecting simulated layouts to localized operational network blockages.</div>
-                        </li>
-                        <li class="list-row">
-                            <div class="row-title">Phase 4: Agentic Mitigation</div>
-                            <div class="row-description">Deploying standalone autonomous software blocks to handle load balancing.</div>
-                        </li>
-                    </ul>
+        <!-- Core Split Context Matrix -->
+        <main>
+            <section class="hero-split-matrix">
+                <h1 class="main-headline">Building Digital<br>Sanctuaries</h1>
+                
+                <div class="featured-context-card">
+                    <div class="context-label">Content Sources</div>
+                    <p class="context-text">Building digital frameworks as quiet sanctuaries. Clean border containers, built over quiet aesthetics that mimic a peaceful hearth fire.</p>
+                    <a href="#learn-more" class="btn-action">Learn More</a>
                 </div>
-                <a href="#explore-logs" class="interaction-anchor">Explore Laboratory Logs &rarr;</a>
             </section>
 
-            <!-- TRACK TWO: SIMULATION SOFTWARE -->
-            <section class="repo-card card-application">
-                <div>
-                    <div class="meta-tag">Application / Virtual World</div>
-                    <h2 class="card-heading">Project: Furious Mole</h2>
-                    
-                    <ul class="list-framework">
-                        <li class="list-row">
-                            <div class="row-title">LSL Telemetry Engine</div>
-                            <div class="row-description">Custom scripts linking object vectors to real-time telemetry coordinates.</div>
-                        </li>
-                        <li class="list-row">
-                            <div class="row-title">Cargo Hunting Subsystems</div>
-                            <div class="row-description">Coordinate tracking arrays processing dynamic map node evaluations.</div>
-                        </li>
-                        <li class="list-row">
-                            <div class="row-title">Azure Storage Infrastructure</div>
-                            <div class="row-description">Cloud state synchronization layer providing high data consistency.</div>
-                        </li>
-                    </ul>
-                </div>
-                <a href="#view-manifest" class="interaction-anchor">View Technical Manifest &rarr;</a>
-            </section>
+            <!-- Bottom Multi-Track Capability Grid -->
+            <section class="focus-row-grid">
+                
+                <!-- FOCUS BLOCK 1: APPLICATION MECHANICS -->
+                <article class="focus-tile">
+                    <div class="tile-icon-frame">
+                        <!-- Toggle Switch Custom SVG Layout -->
+                        <svg class="tile-icon" viewBox="0 0 24 24">
+                            <rect x="2" y="6" width="20" height="12" rx="6" />
+                            <circle cx="8" cy="12" r="3" fill="#FFB74D" />
+                        </svg>
+                    </div>
+                    <h2 class="tile-heading">Local-First Control</h2>
+                    <p class="tile-description">Local-first data layouts prioritizing zero latency, user autonomy, and lightweight offline configuration states.</p>
+                </article>
 
+                <!-- FOCUS BLOCK 2: INFRASTRUCTURE UTILITY -->
+                <article class="focus-tile">
+                    <div class="tile-icon-frame">
+                        <!-- Mobile Diagnostics Custom SVG Layout -->
+                        <svg class="tile-icon" viewBox="0 0 24 24">
+                            <rect x="5" y="2" width="14" height="20" rx="2" />
+                            <path d="M12 18h.01" stroke-width="3" />
+                            <path d="M12 7l1 2.5h2.5L13.5 11l1 2.5-2.5-1.5-2.5 1.5 1-2.5-2-1.5h2.5z" fill="#FFB74D" stroke="none" />
+                        </svg>
+                    </div>
+                    <h2 class="tile-heading">Device Health</h2>
+                    <p class="tile-description">Primary architectures handling low storage requirements, caching maintenance, and resource consumption tracking profiles.</p>
+                </article>
+
+                <!-- FOCUS BLOCK 3: PROTOCOL DATA SECURITY -->
+                <article class="focus-tile">
+                    <div class="tile-icon-frame">
+                        <!-- Minimal Shield Lock Custom SVG Layout -->
+                        <svg class="tile-icon" viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <circle cx="12" cy="11" r="2" fill="#FFB74D" stroke="none" />
+                        </svg>
+                    </div>
+                    <h2 class="tile-heading">Privacy Shield</h2>
+                    <p class="tile-description">Encrypted logic loops isolating local client configuration blocks from centralized telemetry layers.</p>
+                </article>
+
+            </section>
         </main>
-
-        <!-- Low-Stimulus Architectural Ground Footnote -->
-        <footer class="kernel-footer">
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-            </svg>
-            Shared Core Architecture: Both environments share an isolated, low-overhead utility library for state transition processing.
-        </footer>
 
     </div>
 
